@@ -2,6 +2,7 @@ import { Controller, Post, Body, Get, Param, Put, Delete } from '@nestjs/common'
 import { ApiUseTags, ApiOperation } from '@nestjs/swagger';
 import { UserDTO } from '../../dto/user.dto';
 import { UsersService } from './users.service';
+import { LoginDTO } from '../../dto/login.dto';
 
 @ApiUseTags('Usuarios')
 @Controller('users')
@@ -25,6 +26,12 @@ export class UsersController {
     @Get(':id')
     getUserById( @Param('id') id: string ) {
         return this.user$.getUserById(id);
+    }
+
+    @ApiOperation({ title: 'Obtener Usuario por Email' })
+    @Post('/userByEmail')
+    getUserByEmail( @Body() login: LoginDTO ) {
+        return this.user$.getUserByEmail(login.email);
     }
 
     @ApiOperation({ title: 'Actualizar usuario' })

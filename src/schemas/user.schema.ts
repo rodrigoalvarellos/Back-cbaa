@@ -1,5 +1,4 @@
 import * as mongoose from 'mongoose';
-import { SwaggerConfig } from '../configs/swagger';
 
 const rolesValidos = {
     values: ['ADMIN_ROLE', 'USER_ROLE'],
