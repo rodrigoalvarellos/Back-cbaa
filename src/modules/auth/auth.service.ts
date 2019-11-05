@@ -10,11 +10,11 @@ export class AuthService {
 
     constructor(private readonly user$: UsersService) { }
 
-    async validateUser(login: LoginDTO): Promise<any> {
+    async validateUser(username: string, pass: string): Promise<any> {
 
-        const user: IUser = await this.user$.getUserByEmail(login.email);
+        const user: IUser = await this.user$.getUserByEmail(username);
 
-        if (user && bcrypt.compareSync(login.password, user.password)) {
+        if (user && bcrypt.compareSync(pass, user.password)) {
             return user;
         }
 

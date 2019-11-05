@@ -31,7 +31,7 @@ export class UsersController {
     @ApiOperation({ title: 'Obtener Usuario por Email' })
     @Post('/userByEmail')
     getUserByEmail( @Body() login: LoginDTO ) {
-        return this.user$.getUserByEmail(login.email);
+        return this.user$.getUserByEmail(login.username);
     }
 
     @ApiOperation({ title: 'Actualizar usuario' })
