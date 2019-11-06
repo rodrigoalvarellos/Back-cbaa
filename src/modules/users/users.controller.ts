@@ -1,10 +1,12 @@
-import { Controller, Post, Body, Get, Param, Put, Delete } from '@nestjs/common';
-import { ApiUseTags, ApiOperation } from '@nestjs/swagger';
+import { Controller, Post, Body, Get, Param, Put, Delete, UseGuards } from '@nestjs/common';
+import { ApiUseTags, ApiOperation, ApiImplicitHeaders, ApiBearerAuth } from '@nestjs/swagger';
 import { UserDTO } from '../../dto/user.dto';
 import { UsersService } from './users.service';
 import { LoginDTO } from '../../dto/login.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @ApiUseTags('Usuarios')
+@ApiBearerAuth()
 @Controller('users')
 export class UsersController {
 
@@ -17,6 +19,8 @@ export class UsersController {
     }
 
     @ApiOperation({ title: 'Obtener todos los usuarios' })
+    @ApiImplicitHeaders([{name: 'Authorization', description: 'El Tokeeen!'}])
+    @UseGuards(AuthGuard('jwt'))
     @Get()
     getAllUsers() {
         return this.user$.getAllUsers();
@@ -31,7 +35,7 @@ export class UsersController {
     @ApiOperation({ title: 'Obtener Usuario por Email' })
     @Post('/userByEmail')
     getUserByEmail( @Body() login: LoginDTO ) {
-        return this.user$.getUserByEmail(login.username);
+        return this.user$.getUserByEmail(login.email);
     }
 
     @ApiOperation({ title: 'Actualizar usuario' })
