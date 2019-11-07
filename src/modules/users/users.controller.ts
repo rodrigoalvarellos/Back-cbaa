@@ -6,7 +6,7 @@ import { LoginDTO } from '../../dto/login.dto';
 import { AuthGuard } from '@nestjs/passport';
 
 @ApiUseTags('Usuarios')
-@ApiBearerAuth()
+// @ApiBearerAuth()
 @Controller('users')
 export class UsersController {
 
@@ -19,8 +19,8 @@ export class UsersController {
     }
 
     @ApiOperation({ title: 'Obtener todos los usuarios' })
-    @ApiImplicitHeaders([{name: 'Authorization', description: 'El Tokeeen!'}])
-    @UseGuards(AuthGuard('jwt'))
+    // @ApiImplicitHeaders([{name: 'Authorization', description: 'El Tokeeen!'}])
+    // @UseGuards(AuthGuard('jwt'))
     @Get()
     getAllUsers() {
         return this.user$.getAllUsers();

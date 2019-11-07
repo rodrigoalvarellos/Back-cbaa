@@ -1,4 +1,4 @@
-import { Controller, Get, UseGuards, Req } from '@nestjs/common';
+import { Controller, Get, UseGuards, Req, Post } from '@nestjs/common';
 import { ApiUseTags, ApiImplicitHeaders } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 
@@ -11,16 +11,20 @@ export class AppController {
     private readonly appService: AppService ) {}
 
   @Get()
-  getHello(): string {
+  getHello() {
+    return this.appService.getHello();
+  }
+
+  @Post()
+  postHello() {
     return this.appService.getHello();
   }
 
   // @ApiBearerAuth()
-  @ApiImplicitHeaders([{name: 'Authorization', description: 'El Tokeeen!'}])
-  @UseGuards(AuthGuard('jwt'))
-  @Get('profile')
-  getProfile(@Req() req: any) {
-    // console.log(req);
-    return req.user;
-  }
+  // @ApiImplicitHeaders([{name: 'Authorization', description: 'El Tokeeen!'}])
+  // @UseGuards(AuthGuard('jwt'))
+  // @Get('profile')
+  // getProfile(@Req() req: any) {
+  //   return req.user;
+  // }
 }

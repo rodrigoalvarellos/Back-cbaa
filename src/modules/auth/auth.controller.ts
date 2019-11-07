@@ -13,7 +13,6 @@ export class AuthController {
     @UseGuards(AuthGuard('local'))
     @Post('login')
     async login(@Req() req: any) {
-        // return req.user;
         return this.auth$.login(req.user);
     }
 }
