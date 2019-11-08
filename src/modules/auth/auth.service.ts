@@ -1,11 +1,12 @@
 import * as bcrypt from 'bcrypt';
 
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
 import { UsersService } from '../users/users.service';
 import { IUser } from '../../interfaces/user.interface';
 import { RegisterDTO } from '../../dto/register.dto';
+import { UserDTO } from '../../dto/user.dto';
 
 @Injectable()
 export class AuthService {
@@ -31,8 +32,27 @@ export class AuthService {
     }
 
     async registerUser( register: RegisterDTO) {
-        // TODO - 1ro, validar si existe ese usuario, crear usuario, retornar ok o retonar a pantalla para cargar el perfil
+        /*
+            1- validar si las contraseñas son iguales,
+            2- existe ese usuario,
+            3- crear usuario y retornarlo
+        */
+        if ( register.password !== register.confirmPassword ) {
+            throw new UnauthorizedException('Las contraseñas ingresadas no coinciden');
+        }
+        const existe = await this.user$.getUserByEmail(register.email);
+        if (existe) { throw new UnauthorizedException('Usuario ya registrado con ese email'); }
 
+        const newUser: UserDTO = {
+            email: register.email,
+            password: register.password,
+            nombre: null,
+            apellido: null,
+            foto: null,
+            role: 'USER_ROLE',
+        };
+
+        return await this.user$.createUser(newUser);
     }
 
 }

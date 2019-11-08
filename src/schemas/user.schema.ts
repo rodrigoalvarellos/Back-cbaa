@@ -8,11 +8,11 @@ const rolesValidos = {
 export const UserSchema = new mongoose.Schema({
     nombre: {
         type: String,
-        required: [true, 'El nombre es obligatorio'],
+        // required: [true, 'El nombre es obligatorio'],
     },
     apellido: {
         type: String,
-        required: [true, 'El apellido es obligatorio'],
+        // required: [true, 'El apellido es obligatorio'],
     },
     email: {
         type: String,

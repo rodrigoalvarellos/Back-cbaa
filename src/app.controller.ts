@@ -15,11 +15,6 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post()
-  postHello() {
-    return this.appService.getHello();
-  }
-
   // @ApiBearerAuth()
   // @ApiImplicitHeaders([{name: 'Authorization', description: 'El Tokeeen!'}])
   // @UseGuards(AuthGuard('jwt'))

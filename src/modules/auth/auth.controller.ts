@@ -1,15 +1,17 @@
 import { Controller, UseGuards, Post, Req, Body } from '@nestjs/common';
-import { ApiImplicitBody } from '@nestjs/swagger';
+import { ApiImplicitBody, ApiUseTags, ApiOperation } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { LoginDTO } from '../../dto/login.dto';
 import { RegisterDTO } from '../../dto/register.dto';
 
+@ApiUseTags('Auth')
 @Controller('auth')
 export class AuthController {
 
     constructor(private auth$: AuthService) { }
 
+    @ApiOperation({ title: 'Log in endpoint - Retorna Token ' })
     @ApiImplicitBody({ name: 'Login Dto', type: LoginDTO })
     @UseGuards(AuthGuard('local'))
     @Post('login')
@@ -17,8 +19,9 @@ export class AuthController {
         return this.auth$.login(req.user);
     }
 
+    @ApiOperation({ title: 'Registra usuario solo email y password' })
     @Post('register')
     async registerUser( @Body() register: RegisterDTO) {
-        console.log(register);
+        return this.auth$.registerUser(register);
     }
 }
