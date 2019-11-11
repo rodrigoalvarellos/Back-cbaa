@@ -5,6 +5,7 @@ export class UserDTO {
     @ApiModelProperty() readonly apellido: string;
     @ApiModelProperty() readonly email: string;
     @ApiModelProperty() readonly password: string;
+    @ApiModelProperty() readonly descripcion: string;
     @ApiModelProperty() readonly foto: string;
     @ApiModelProperty() readonly role: string;
 }

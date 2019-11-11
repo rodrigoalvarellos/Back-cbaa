@@ -49,6 +49,7 @@ export class AuthService {
             nombre: null,
             apellido: null,
             foto: null,
+            descripcion: null,
             role: 'USER_ROLE',
         };
 

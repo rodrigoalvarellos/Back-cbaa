@@ -1,4 +1,4 @@
-import { Controller, UseGuards, Post, Req, Body } from '@nestjs/common';
+import { Controller, UseGuards, Post, Req, Body, Delete } from '@nestjs/common';
 import { ApiImplicitBody, ApiUseTags, ApiOperation } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth.service';
@@ -19,9 +19,15 @@ export class AuthController {
         return this.auth$.login(req.user);
     }
 
-    @ApiOperation({ title: 'Registra usuario solo email y password' })
+    @ApiOperation({ title: 'Desloguear usuario' })
     @Post('register')
     async registerUser( @Body() register: RegisterDTO) {
         return this.auth$.registerUser(register);
+    }
+
+    @ApiOperation({ title: 'Registra usuario solo email y password' })
+    @Delete('logout')
+    async logout() {
+        return { ok: true};
     }
 }

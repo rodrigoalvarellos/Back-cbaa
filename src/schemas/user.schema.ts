@@ -30,6 +30,9 @@ export const UserSchema = new mongoose.Schema({
     foto: {
         type: String,
     },
+    descripcion: {
+        type: String,
+    },
     isActive: {
         type: Boolean,
         default: true,
