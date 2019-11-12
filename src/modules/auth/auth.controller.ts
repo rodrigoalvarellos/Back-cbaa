@@ -25,7 +25,7 @@ export class AuthController {
         return this.auth$.registerUser(register);
     }
 
-    @ApiOperation({ title: 'Registra usuario solo email y password' })
+    @ApiOperation({ title: 'logout de usuario' })
     @Delete('logout')
     async logout() {
         return { ok: true};
