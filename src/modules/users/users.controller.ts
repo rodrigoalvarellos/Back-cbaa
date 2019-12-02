@@ -10,11 +10,11 @@ import { AuthGuard } from '@nestjs/passport';
 @Controller('users')
 export class UsersController {
 
-    constructor( private user$: UsersService ) {}
+    constructor(private user$: UsersService) { }
 
     @ApiOperation({ title: 'Crear nuevo usuario' })
     @Post()
-    createUser( @Body() user: UserDTO) {
+    createUser(@Body() user: UserDTO) {
         return this.user$.createUser(user);
     }
 
@@ -28,25 +28,25 @@ export class UsersController {
 
     @ApiOperation({ title: 'Obtener Usuario por ID' })
     @Get(':id')
-    getUserById( @Param('id') id: string ) {
+    getUserById(@Param('id') id: string) {
         return this.user$.getUserById(id);
     }
 
     @ApiOperation({ title: 'Obtener Usuario por Email' })
     @Post('/userByEmail')
-    getUserByEmail( @Body() login: LoginDTO ) {
+    getUserByEmail(@Body() login: LoginDTO) {
         return this.user$.getUserByEmail(login.email);
     }
 
     @ApiOperation({ title: 'Actualizar usuario' })
     @Put(':id')
-    updateUser( @Param('id') id: string, @Body() user: UserDTO ) {
-      return this.user$.updateUser(id, user);
+    updateUser(@Param('id') id: string, @Body() user: UserDTO) {
+        return this.user$.updateUser(id, user);
     }
 
-    @ApiOperation({title: 'Eliminar usuario', description: 'Eliminacion logica de usuario'})
+    @ApiOperation({ title: 'Eliminar usuario', description: 'Eliminacion logica de usuario' })
     @Delete(':id')
-    deleteUser( @Param('id') id: string ) {
+    deleteUser(@Param('id') id: string) {
         return this.user$.deleteUser(id);
     }
 
