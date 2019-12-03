@@ -8,6 +8,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { LugaresModule } from './modules/lugares/lugares.module';
 import { DiscapacidadesModule } from './modules/discapacidades/discapacidades.module';
 import { CategoriasModule } from './modules/categorias/categorias.module';
+import { OrganizacionesModule } from './modules/organizaciones/organizaciones.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { CategoriasModule } from './modules/categorias/categorias.module';
     LugaresModule,
     DiscapacidadesModule,
     CategoriasModule,
+    OrganizacionesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

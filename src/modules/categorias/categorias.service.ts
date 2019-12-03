@@ -7,7 +7,7 @@ import { CategoriaDTO } from '../../dto/categoria.dto';
 @Injectable()
 export class CategoriasService {
 
-    constructor(@InjectModel('Categorias') private readonly categModel: Model<ICategoria>) { }
+    constructor(@InjectModel('Categoria') private readonly categModel: Model<ICategoria>) { }
 
     async createCategoria(categ: CategoriaDTO) {
         const newCateg = new this.categModel(categ);

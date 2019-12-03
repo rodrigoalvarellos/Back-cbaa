@@ -7,7 +7,6 @@ import { CategoriaDTO } from '../../dto/categoria.dto';
 @Controller('categorias')
 export class CategoriasController {
 
-
     constructor( private categ$: CategoriasService ) {}
 
     @ApiOperation({ title: 'Obtener todas las categorias' })

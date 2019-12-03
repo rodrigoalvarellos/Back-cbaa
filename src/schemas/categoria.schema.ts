@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose';
 
 
 
-export const CategoriasSchema = new mongoose.Schema({
+export const CategoriaSchema = new mongoose.Schema({
     nombre: {
         type: String,
         required: [true, 'El nombre es obligatorio'],
