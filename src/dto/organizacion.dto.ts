@@ -7,6 +7,7 @@ export class OrganizacionDTO {
     @ApiModelProperty() readonly descripcion: string;
     @ApiModelProperty() readonly telefono: string;
     @ApiModelProperty() readonly categorias: [];
+    @ApiModelProperty() readonly discapacidades: [];
     @ApiModelProperty() readonly direccion: string;
     @ApiModelProperty() readonly lat: number;
     @ApiModelProperty() readonly lng: number;

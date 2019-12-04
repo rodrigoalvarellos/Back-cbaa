@@ -10,9 +10,12 @@ import { DiscapacidadesModule } from './modules/discapacidades/discapacidades.mo
 import { CategoriasModule } from './modules/categorias/categorias.module';
 import { OrganizacionesModule } from './modules/organizaciones/organizaciones.module';
 
+const BDLOCAL = 'mongodb://localhost/cba-accesible';
+const BDONLINE =  'mongodb+srv://ralvarellos69:H4293tS2JN3PJ2Y7@cluster0-alygm.mongodb.net/cba-accesible';
+
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/cba-accesible', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true }),
+    MongooseModule.forRoot( BDLOCAL , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true }),
     UsersModule,
     AuthModule,
     LugaresModule,
