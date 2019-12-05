@@ -1630,7 +1630,7 @@
         "signature": "2608cfd623840916e664e68c3dc5eb4347ccae822f808d899bf00e73cbab2bfe"
       },
       "../src/configs/swagger.ts": {
-        "version": "267d678860e81685a6db37ddfe9259fb1b1be263172859c9c2ca1237a4448a83",
+        "version": "58ab1f8cfa0b453f4585c6bebf0cfb3bbee8717b84eb75a07e4cae347251b46d",
         "signature": "ad82e0d41948d73fdf70b332c39f46b43e3a95f879011a2cb0d74270101215e7"
       },
       "../src/main.ts": {
@@ -8957,7 +8957,7 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts",
       "../node_modules/@nestjs/core/services/index.d.ts",
       "../node_modules/@nestjs/core/index.d.ts",
-      "../src/configs/swagger.ts",
+      "../src/main.ts",
       "../node_modules/@types/anymatch/index.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
@@ -8989,7 +8989,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/main.ts"
+      "../src/configs/swagger.ts"
     ]
   },
   "version": "3.6.4"

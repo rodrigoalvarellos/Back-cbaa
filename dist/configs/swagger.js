@@ -6,6 +6,7 @@ function SwaggerConfig(app) {
         .setTitle('CBA-Accesible - Backend API')
         .setDescription('Backend desarrollado con Nest:JS. For more help go to https://docs.nestjs.com/recipes/swagger')
         .setVersion('1.0')
+        .setSchemes('http', 'https')
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, options);
     swagger_1.SwaggerModule.setup('swagger', app, document);
