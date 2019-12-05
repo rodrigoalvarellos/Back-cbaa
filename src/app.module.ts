@@ -15,7 +15,8 @@ const BDONLINE =  'mongodb+srv://ralvarellos69:H4293tS2JN3PJ2Y7@cluster0-alygm.m
 
 @Module({
   imports: [
-    MongooseModule.forRoot( BDLOCAL , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true }),
+    MongooseModule.forRoot( BDONLINE , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true }),
+    // MongooseModule.forRoot( BDLOCAL , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true }),
     UsersModule,
     AuthModule,
     LugaresModule,
