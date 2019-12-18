@@ -16,6 +16,7 @@ const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
 const categorias_service_1 = require("./categorias.service");
 const categoria_dto_1 = require("../../dto/categoria.dto");
+const passport_1 = require("@nestjs/passport");
 let CategoriasController = class CategoriasController {
     constructor(categ$) {
         this.categ$ = categ$;
@@ -77,6 +78,7 @@ __decorate([
 ], CategoriasController.prototype, "deleteUser", null);
 CategoriasController = __decorate([
     swagger_1.ApiUseTags('Categorias'),
+    common_1.UseGuards(passport_1.AuthGuard('jwt')),
     common_1.Controller('categorias'),
     __metadata("design:paramtypes", [categorias_service_1.CategoriasService])
 ], CategoriasController);

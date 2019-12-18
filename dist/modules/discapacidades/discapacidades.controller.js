@@ -14,6 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
+const passport_1 = require("@nestjs/passport");
 const discapacidad_dto_1 = require("../../dto/discapacidad.dto");
 const discapacidades_service_1 = require("./discapacidades.service");
 let DiscapacidadesController = class DiscapacidadesController {
@@ -77,6 +78,7 @@ __decorate([
 ], DiscapacidadesController.prototype, "deleteUser", null);
 DiscapacidadesController = __decorate([
     swagger_1.ApiUseTags('Discapacidades'),
+    common_1.UseGuards(passport_1.AuthGuard('jwt')),
     common_1.Controller('discapacidades'),
     __metadata("design:paramtypes", [discapacidades_service_1.DiscapacidadesService])
 ], DiscapacidadesController);

@@ -1326,7 +1326,7 @@
         "signature": "9e2959e05adcd93ad885ad64e08a1ebb44ffc1f366c234ea5d5dc396bbf752e1"
       },
       "../src/modules/users/users.controller.ts": {
-        "version": "9da84afa25d97d742c7005dba897481b74b92baec3520d455ec48a3c477bee6e",
+        "version": "3628373b88cb1e2be37e3d4878fc9ea80f22dae22e6c414c2d9613543d57f99f",
         "signature": "4863956592dd1bdc692aeab7b9cde2e33a4db8cb2ebafa17ed71a95badf7eaff"
       },
       "../src/modules/users/users.module.ts": {
@@ -1450,7 +1450,7 @@
         "signature": "e6d5bcbfc44cef899f6ee3c899bf4fd5efac8e11796f13f7fe333ff9a940815f"
       },
       "../src/modules/discapacidades/discapacidades.controller.ts": {
-        "version": "3a4a75e2df4b00c16f86451b80cd5dd339f49d314f9c816b07f580532b355a0d",
+        "version": "430640d7601b598118b0820320aa3f73c5da4b854ae66ad0661bb429155883c1",
         "signature": "f7ad04764ae4d197fc5897d62a766fd6be710cfd42d75c07bec7f7a23e87d725"
       },
       "../src/schemas/discapacidad.schema.ts": {
@@ -1474,7 +1474,7 @@
         "signature": "bf4108ad8ba5280c7ae45d1102e730abc57385eb73d767fdbc4005152a4bbd10"
       },
       "../src/modules/categorias/categorias.controller.ts": {
-        "version": "09070a660978af5556b0cc93f84e529f80eb0ca74f01524522270a62c71ea6fa",
+        "version": "6ae77832efde13465f8aad9cb89e99dcb56939c1376d7d80885b3071715978cf",
         "signature": "20c10964864994e2cf94d1baae364a078afe6f9e4cb9e704ee5787030facb4fb"
       },
       "../src/schemas/categoria.schema.ts": {
@@ -4646,6 +4646,7 @@
       "../src/modules/discapacidades/discapacidades.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/swagger/index.d.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
         "../src/dto/discapacidad.dto.ts",
         "../src/modules/discapacidades/discapacidades.service.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -4701,6 +4702,7 @@
         "../node_modules/@nestjs/swagger/index.d.ts",
         "../src/modules/categorias/categorias.service.ts",
         "../src/dto/categoria.dto.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -8881,7 +8883,6 @@
       "../src/interfaces/user.interface.ts",
       "../src/modules/users/users.service.ts",
       "../src/dto/login.dto.ts",
-      "../src/modules/users/users.controller.ts",
       "../src/modules/users/users.module.ts",
       "../node_modules/@types/jsonwebtoken/index.d.ts",
       "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
@@ -8957,6 +8958,7 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts",
       "../node_modules/@nestjs/core/services/index.d.ts",
       "../node_modules/@nestjs/core/index.d.ts",
+      "../src/configs/swagger.ts",
       "../src/main.ts",
       "../node_modules/@types/anymatch/index.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
@@ -8989,7 +8991,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/configs/swagger.ts"
+      "../src/modules/users/users.controller.ts"
     ]
   },
   "version": "3.6.4"

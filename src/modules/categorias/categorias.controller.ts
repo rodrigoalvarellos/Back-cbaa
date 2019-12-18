@@ -1,9 +1,11 @@
-import { Controller, Get, Param, Post, Body, Put, Delete } from '@nestjs/common';
+import { Controller, Get, Param, Post, Body, Put, Delete, UseGuards } from '@nestjs/common';
 import { ApiUseTags, ApiOperation } from '@nestjs/swagger';
 import { CategoriasService } from './categorias.service';
 import { CategoriaDTO } from '../../dto/categoria.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @ApiUseTags('Categorias')
+@UseGuards(AuthGuard('jwt'))
 @Controller('categorias')
 export class CategoriasController {
 

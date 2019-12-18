@@ -17,6 +17,7 @@ const swagger_1 = require("@nestjs/swagger");
 const user_dto_1 = require("../../dto/user.dto");
 const users_service_1 = require("./users.service");
 const login_dto_1 = require("../../dto/login.dto");
+const passport_1 = require("@nestjs/passport");
 let UsersController = class UsersController {
     constructor(user$) {
         this.user$ = user$;
@@ -89,6 +90,7 @@ __decorate([
 ], UsersController.prototype, "deleteUser", null);
 UsersController = __decorate([
     swagger_1.ApiUseTags('Usuarios'),
+    common_1.UseGuards(passport_1.AuthGuard('jwt')),
     common_1.Controller('users'),
     __metadata("design:paramtypes", [users_service_1.UsersService])
 ], UsersController);

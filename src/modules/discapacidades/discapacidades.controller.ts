@@ -1,9 +1,11 @@
-import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards } from '@nestjs/common';
 import { ApiUseTags, ApiOperation } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 import { DiscapacidadDTO } from '../../dto/discapacidad.dto';
 import { DiscapacidadesService } from './discapacidades.service';
 
 @ApiUseTags('Discapacidades')
+@UseGuards(AuthGuard('jwt'))
 @Controller('discapacidades')
 export class DiscapacidadesController {
 

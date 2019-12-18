@@ -7,6 +7,7 @@ import { AuthGuard } from '@nestjs/passport';
 
 @ApiUseTags('Usuarios')
 // @ApiBearerAuth()
+@UseGuards(AuthGuard('jwt'))
 @Controller('users')
 export class UsersController {
 
